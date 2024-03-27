@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS Characters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    lore TEXT,
+    image_url VARCHAR(255)
+);
+
+INSERT INTO Characters (name, role, lore, image_url) VALUES
+    ('Arthas', 'Lich King', 'Originalmente, Arthas era um príncipe humano e o filho do Rei Terenas Menethil II, governante de Lordaeron. Ele foi treinado como um paladino e era altamente respeitado por suas habilidades e liderança. No entanto, sua história toma um rumo sombrio quando ele se torna obcecado em salvar seu reino da praga dos mortos-vivos, liderada pelo Lich King, Ner''zhul. Arthas embarca em uma jornada para derrotar Ner''zhul, mas acaba caindo em desespero e corrupção. Ele renuncia aos seus votos de paladino, empunha a espada rúnica chamada "Frostmourne" e se torna um agente do Lich King. Arthas se transforma no próprio Lich King e lidera o Flagelo em uma cruzada para subjugar Azeroth.', 'https://bnetcmsus-a.akamaihd.net/cms/blog_header/a6/A6R806U7HJTN1650384185893.png'),
+    ('Ner''zul', 'Antigo Lich King', 'Ner''zul era o xamã ancião orc que foi enganado e fez o pacto de sangue com Kil''Jaeden, lorde demônio da Legião Ardente, se arrependendo depois. Ainda assim ele virou um orco com coração obscurecido, corrompido e cheio de sede de conquista. Pode-se considera-lo responsável em boa parte pela destruição de Draenor, que levou os remanescentes do planeta ao Twisting Nether, agora renomeado como Outland. Mais tarde ele se tornaria a mais sinistra, perversa e maligna entidade em Azeroth, o Lich King, líder absoluto e supremo comandante do exercito conhecido como flagelo morto-vivo.', 'https://static.wikia.nocookie.net/wowwiki/images/e/e7/Nerzhul_Lich_King.jpg/revision/latest?cb=20170904082616'),
+    ('Sylvanas Correventos', 'Chefe Guerreira', 'Originalmente, Sylvanas era uma alta-elfa, a Ranger-General de Quel''Thalas, um reino élfico. No entanto, durante a Terceira Guerra, ela foi morta por Arthas Menethil, o Lich King, e transformada em uma Renegada, uma morta-viva. A partir daí, ela se tornou uma líder formidável e controversa. Ao longo das expansões de WoW, Sylvanas desempenhou vários papéis, desde líder dos Renegados até Chefe Guerreira da Horda. Ela é conhecida por suas ações controversas e moralmente cinzentas, muitas vezes agindo em busca de poder e sobrevivência para seu povo, independentemente das consequências.', 'https://lendasdeazeroth.com.br/wp-content/uploads/2013/11/sylvanas-windrunner-07-scaled.jpg');
