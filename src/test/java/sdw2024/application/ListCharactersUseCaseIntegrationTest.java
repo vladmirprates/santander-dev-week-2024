@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import sdw2024.domain.model.Characters;
+import sdw2024.domain.model.Character;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class ListCharactersUseCaseIntegrationTest {
 
     @Test
     public void testListCharacters() {
-        List<Characters> characters = listCharactersUseCase.findAll();
-        Assertions.assertEquals(3, characters.size());
+        List<Character> characters = listCharactersUseCase.findAll();
+        Assertions.assertEquals(4, characters.size());
     }
 }

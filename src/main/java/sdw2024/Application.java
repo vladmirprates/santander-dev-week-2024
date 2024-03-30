@@ -3,6 +3,7 @@ package sdw2024;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import sdw2024.application.AskCharacterUseCase;
 import sdw2024.application.ListCharactersUseCase;
 import sdw2024.domain.ports.CharactersRepository;
 
@@ -16,5 +17,10 @@ public class Application {
 	@Bean
 	public ListCharactersUseCase provideListCharactersUseCase(CharactersRepository repository) {
 		return new ListCharactersUseCase(repository);
+	}
+
+	@Bean
+	public AskCharacterUseCase provideAskCharacterUseCase(CharactersRepository repository) {
+		return new AskCharacterUseCase(repository);
 	}
 }
