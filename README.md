@@ -1,9 +1,9 @@
 
-# Santander Dev Week 2024
+# Santander Dev Week 2024 - ChatBot Personagens de WoW
 
 ## 📚 Sobre o Projeto
 
-Neste repositório, você encontrará o código-fonte de uma REST API e seu respectivo Frontend (pasta `/docs`), desenvolvidos durante a Santander Dev Week 2024, fruto de uma colaboração entre a DIO e o Santander. Este projeto, construído com Java 21 e Spring Boot 3, é o resultado de quatro dias de lives, com um propósito incrível: 
+Neste repositório, você encontrará o código-fonte de uma REST API e seu respectivo Frontend (pasta `/docs`), desenvolvidos durante o estudo da Santander Dev Week 2024, fruto de uma colaboração entre a DIO e o Santander. Este projeto, construído com Java 21 e Spring Boot 3, é o resultado de quatro dias de lives, com um propósito incrível: 
 
 > [!NOTE]
 > Objetivo: "Permitir que os usuários conversem com os personagens importantes do mundo de World of Warcraft (WoW)".
