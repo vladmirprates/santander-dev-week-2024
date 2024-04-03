@@ -14,8 +14,8 @@ Para isso, utilizamos algumas das mais recentes Inteligências Artificiais (IAs)
 
 > [!TIP]
 > Caso queira reproduzir este projeto, você terá os seguintes pré-requisitos:
-> - Java 21 **[JDK 21](https://www.oracle.com/br/java/technologies/downloads/#java21)** (versão LTS do Java na data das lives);
-> - IDE **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download)** 
+> - **[JDK 21](https://www.oracle.com/br/java/technologies/downloads/#java21)** (versão LTS do Java na data das lives);
+> - **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download)** 
 > - Serviços AWS (para publicar a API REST na Nuvem usando o [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk);
 > - Conta na OpenAI e Google para integração com os modelos [GPT](https://platform.openai.com/docs/api-reference/chat/create) e [Gemini](https://ai.google.dev/tutorials/rest_quickstart#text-only_input).
 >
@@ -72,7 +72,7 @@ Refletindo a organização apresentada no diagrama arquitetural, a estrutura de 
 
 ### Banco de Dados SQL em Memória
 
-A utilização do banco de dados H2 neste projeto serve como uma fundação ágil e flexível para modelar nosso domínio de conhecimento — os campeões do LOL. Essa escolha permite uma rápida prototipação e um ambiente de desenvolvimento eficiente, essencial para armazenar e recuperar informações detalhadas sobre cada campeão. Dessa forma, garantimos que as IAs Generativas que integramos possam acessar um repositório rico e detalhado, permitindo-lhes capturar com precisão a essência e a personalidade única de cada campeão, enriquecendo assim a interatividade e a profundidade das interações realizadas.
+A utilização do banco de dados H2 neste projeto serve como uma fundação ágil e flexível para modelar nosso domínio de conhecimento — os personagens de WoW. Essa escolha permite uma rápida prototipação e um ambiente de desenvolvimento eficiente, essencial para armazenar e recuperar informações detalhadas sobre cada campeão. Dessa forma, garantimos que as IAs Generativas que integramos possam acessar um repositório rico e detalhado, permitindo-lhes capturar com precisão a essência e a personalidade única de cada campeão, enriquecendo assim a interatividade e a profundidade das interações realizadas.
 
 ```sql
 CREATE TABLE IF NOT EXISTS Characters (
