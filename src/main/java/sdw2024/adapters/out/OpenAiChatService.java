@@ -7,13 +7,13 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import sdw2024.domain.ports.GenerativeAiService;
 
 import java.util.List;
 
-@ConditionalOnProperty(name = "generative-ai.provider", havingValue = "OPENAI", matchIfMissing = true)
-@FeignClient(name = "openAiChatCompletionAPI", url = "${openai.base-url}", configuration = OpenAiChatService.Config.class)
+@FeignClient(name = "openAiService", url = "${openai.base-url}", configuration = OpenAiChatService.Config.class)
 public interface OpenAiChatService extends GenerativeAiService {
 
     @PostMapping("/v1/chat/completions")
@@ -27,31 +27,21 @@ public interface OpenAiChatService extends GenerativeAiService {
                 new Message("user", context)
         );
         OpenAiChatCompletionReq req = new OpenAiChatCompletionReq(model, messages);
-        try {
-            OpenAiChatCompletionResp resp = chatCompletion(req);
-            return resp.choices().getFirst().message().content();
-        } catch (FeignException httpErrors) {
-            return "Deu ruim! Erro de comunicação com a API da OpenAI.";
-        } catch (Exception unexpectedError) {
-            return "Deu mais ruim ainda! O retorno da API da OpenAI não contem os dados esperados.";
-        }
+        OpenAiChatCompletionResp resp = chatCompletion(req);
+        return  resp.choices().getFirst().message().content();
     }
 
-    record OpenAiChatCompletionReq(String model, List<Message> messages) {
-    }
+    record OpenAiChatCompletionReq(String model, List<Message> messages) { }
 
-    record Message(String role, String content) {
-    }
+    record Message(String role, String content) { }
 
-    record OpenAiChatCompletionResp(List<Choice> choices) {
-    }
+    record OpenAiChatCompletionResp(List<Choice> choices) { }
 
-    record Choice(Message message) {
-    }
+    record Choice(Message message) { }
 
     class Config {
         @Bean
-        public RequestInterceptor apiKeyRequestInterceptor(@Value("${openai.api-key}") String apiKey) {
+        public RequestInterceptor apiKeyRequestInterceptor(@Value("${openai.api-key}") String apiKey){
             return requestTemplate -> requestTemplate.header(
                     HttpHeaders.AUTHORIZATION, "Bearer %s".formatted(apiKey));
         }

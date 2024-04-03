@@ -21,8 +21,6 @@ public record AskCharacterUseCase(CharactersRepository repository, GenerativeAiS
                 """;
 
 
-        genAiService.generateContent(objective, context);
-
-        return context;
+        return genAiService.generateContent(objective, context);
     }
 }
