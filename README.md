@@ -13,7 +13,6 @@ Para isso, utilizamos algumas das mais recentes Inteligências Artificiais (IAs)
 ### Tecnologias utilizadas
 
 > [!TIP]
-> Caso queira reproduzir este projeto, você terá os seguintes pré-requisitos:
 > - **[JDK 21](https://www.oracle.com/br/java/technologies/downloads/#java21)** (versão LTS do Java na data das lives);
 > - **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download)** 
 > - Serviços AWS (para publicar a API REST na Nuvem usando o [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk);
