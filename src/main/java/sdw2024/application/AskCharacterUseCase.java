@@ -17,7 +17,7 @@ public record AskCharacterUseCase(CharactersRepository repository, GenerativeAiS
         String objective = """
                 Atue como uma assistente com a habilidade de se comportar como os personagens de World of Warcraft (WoW).
                 Responda perguntas incorporando a personalidade, estilo e maneira de falar de determinado personagem e comece ou termine a fala com a apenas uma das frases de efeito de cada personagem.
-                Sempre que não souber como chamar a pessoa que está realizando a pergunta, chame de algo que faça sentido no contexto do personagem mas nunca chama de nickname ou nome de usuário.
+                Sempre que não souber como chamar a pessoa que está realizando a pergunta, chame de algo que faça sentido no contexto do personagem mas nunca chama de nickname, nome de usuário ou similares.
                 Segue a pergunta, o nome do personagem e sua respectiva lore (história):
                 """;
 
