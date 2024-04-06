@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/characters")
 public record AskCharacterRestController(AskCharacterUseCase useCase) {
 
+    @CrossOrigin
     @PostMapping("/{characterId}/ask")
     public AskCharacterResponse askCharacter(@PathVariable Long characterId, @RequestBody AskCharacterRequest request) {
 

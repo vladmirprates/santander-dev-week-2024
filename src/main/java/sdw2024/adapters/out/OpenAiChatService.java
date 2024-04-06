@@ -11,8 +11,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import sdw2024.domain.ports.GenerativeAiService;
 
+import java.awt.*;
 import java.util.List;
 
+// *** NÃO IMPLEMENTADO *** //
+//
 @FeignClient(name = "openAiService", url = "${openai.base-url}", configuration = OpenAiChatService.Config.class)
 public interface OpenAiChatService extends GenerativeAiService {
 
@@ -27,8 +30,14 @@ public interface OpenAiChatService extends GenerativeAiService {
                 new Message("user", context)
         );
         OpenAiChatCompletionReq req = new OpenAiChatCompletionReq(model, messages);
-        OpenAiChatCompletionResp resp = chatCompletion(req);
-        return  resp.choices().getFirst().message().content();
+        try {
+            OpenAiChatCompletionResp resp = chatCompletion(req);
+            return  resp.choices().getFirst().message().content();
+        } catch (FeignException httpErrors) {
+            return "Deu ruim! Erro de comunicação com a API da OpenAI.";
+        } catch (Exception unexpectedError) {
+            return "Deu mais ruim ainda! O retorno da API da OpenAI não contem os dados esperados.";
+        }
     }
 
     record OpenAiChatCompletionReq(String model, List<Message> messages) { }
